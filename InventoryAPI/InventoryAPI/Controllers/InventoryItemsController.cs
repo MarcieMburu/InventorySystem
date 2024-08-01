@@ -13,11 +13,11 @@ namespace InventoryAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class InventoryDetailsController : ControllerBase
+    public class InventoryItemsController : ControllerBase
     {
         private readonly InventoryAPIContext _context;
 
-        public InventoryDetailsController(InventoryAPIContext context)
+        public InventoryItemsController(InventoryAPIContext context)
         {
             _context = context;
         }
@@ -25,24 +25,24 @@ namespace InventoryAPI.Controllers
 
         // GET: api/items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<InventoryDetail>>> GetInventoryItems()
+        public async Task<ActionResult<IEnumerable<InventoryItem >>> GetInventoryItems()
         {
-            if (_context.InventoryDetails == null)
+            if (_context.InventoryItems == null)
             {
                 return NotFound();
             }
-            return await _context.InventoryDetails.ToListAsync();
+            return await _context.InventoryItems.ToListAsync();
         }
 
         // GET: api/items/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<InventoryDetail>> GetInventoryItem(int id)
+        public async Task<ActionResult<InventoryItem >> GetInventoryItem(int id)
         {
-            if (_context.InventoryDetails == null)
+            if (_context.InventoryItems == null)
             {
                 return NotFound();
             }
-            var inventoryDetail = await _context.InventoryDetails.FindAsync(id);
+            var inventoryDetail = await _context.InventoryItems.FindAsync(id);
 
             if (inventoryDetail == null)
             {
@@ -55,21 +55,21 @@ namespace InventoryAPI.Controllers
 
         // POST: api/items
         [HttpPost]
-        public async Task<ActionResult<InventoryDetail>> PostInventoryItem(InventoryDetail inventoryItem)
+        public async Task<ActionResult<InventoryItem >> PostInventoryItem(InventoryItem  inventoryItem)
         {
-            if (_context.InventoryDetails == null)
+            if (_context.InventoryItems == null)
             {
                 return Problem("Entity Not Found");
             }
-            _context.InventoryDetails.Add(inventoryItem);
+            _context.InventoryItems.Add(inventoryItem);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.InventoryDetails.ToListAsync());
+            return Ok(await _context.InventoryItems.ToListAsync());
         }
 
         // PUT: api/items/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInventoryItem(int id, InventoryDetail inventoryItem)
+        public async Task<IActionResult> PutInventoryItem(int id, InventoryItem  inventoryItem)
         {
             if (id != inventoryItem.ItemID)
             {
@@ -94,32 +94,32 @@ namespace InventoryAPI.Controllers
                 }
             }
 
-            return Ok(await _context.InventoryDetails.ToListAsync());
+            return Ok(await _context.InventoryItems.ToListAsync());
         }
 
         // DELETE: api/items/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteInventoryItem(int id)
         {
-            if (_context.InventoryDetails == null)
+            if (_context.InventoryItems == null)
             {
                 return NotFound();
             }
-            var inventoryDetail = await _context.InventoryDetails.FindAsync(id);
+            var inventoryDetail = await _context.InventoryItems.FindAsync(id);
             if (inventoryDetail == null)
             {
                 return NotFound();
             }
 
-            _context.InventoryDetails.Remove(inventoryDetail);
+            _context.InventoryItems.Remove(inventoryDetail);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.InventoryDetails.ToListAsync());
+            return Ok(await _context.InventoryItems.ToListAsync());
         }
 
         private bool InventoryItemExists(int id)
         {
-            return (_context.InventoryDetails?.Any(e => e.ItemID == id)).GetValueOrDefault();
+            return (_context.InventoryItems?.Any(e => e.ItemID == id)).GetValueOrDefault();
         }
     }
 }

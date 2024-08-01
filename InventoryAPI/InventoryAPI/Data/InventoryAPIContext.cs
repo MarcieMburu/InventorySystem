@@ -14,11 +14,11 @@ namespace InventoryAPI.Data
         {
         }
 
-        public DbSet<InventoryAPI.Models.InventoryDetail> InventoryDetails { get; set; } = default!;
+        public DbSet<InventoryAPI.Models.InventoryItem > InventoryItems{ get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<InventoryDetail>()
+            modelBuilder.Entity<InventoryItem >()
                 .Property(p => p.Price)
                 .HasColumnType("decimal(18,2)");
         }

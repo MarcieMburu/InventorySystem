@@ -1,4 +1,4 @@
-export class InventoryDetail {
+export class InventoryItem {
   itemID: number = 0
   itemName: string = ""
   description: string = ""

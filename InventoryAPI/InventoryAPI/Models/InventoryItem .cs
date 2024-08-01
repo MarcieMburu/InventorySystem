@@ -2,14 +2,14 @@
 
 namespace InventoryAPI.Models
 {
-    public class InventoryDetail
+    public class InventoryItem
     {
         [Key]
         public int ItemID { get; set; }
 
         [Required]
         [StringLength(100)]
-        public string ItemName { get; set; }
+        public string Name { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }

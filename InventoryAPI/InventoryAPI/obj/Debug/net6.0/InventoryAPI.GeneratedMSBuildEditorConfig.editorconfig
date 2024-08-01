@@ -16,24 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Mercy\source\repos\InventorySystem\InventoryAPI\InventoryAPI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryDetails/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5RGV0YWlsc1xDcmVhdGUuY3NodG1s
+[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryDetails/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5RGV0YWlsc1xEZWxldGUuY3NodG1s
+[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryDetails/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5RGV0YWlsc1xEZXRhaWxzLmNzaHRtbA==
+[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryDetails/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5RGV0YWlsc1xFZGl0LmNzaHRtbA==
+[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryDetails/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5RGV0YWlsc1xJbmRleC5jc2h0bWw=
+[C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/InventoryItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5SXRlbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mercy/source/repos/InventorySystem/InventoryAPI/InventoryAPI/Views/Shared/_ValidationScriptsPartial.cshtml]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { InventoryDetail } from '../shared/inventory-detail.model';
-import { InventoryDetailService } from '../shared/inventory-detail.service';
+import { InventoryItem } from '../shared/inventory-detail.model';
+import { InventoryItemService } from '../shared/inventory-detail.service';
 
 @Component({
   selector: 'app-inventory-details',
@@ -9,16 +9,16 @@ import { InventoryDetailService } from '../shared/inventory-detail.service';
   styles: [
   ]
 })
-export class InventoryDetailsComponent implements OnInit {
+export class InventoryItemComponent implements OnInit {
 
-  constructor(public service: InventoryDetailService, private toastr: ToastrService) {
+  constructor(public service: InventoryItemService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
     this.service.refreshList();
   }
 
-  populateForm(selectedRecord: InventoryDetail) {
+  populateForm(selectedRecord: InventoryItem) {
     this.service.formData = Object.assign({}, selectedRecord);
   }
 
@@ -27,7 +27,7 @@ export class InventoryDetailsComponent implements OnInit {
       this.service.deleteInventoryDetail(id)
         .subscribe({
           next: res => {
-            this.service.list = res as InventoryDetail[]
+            this.service.list = res as InventoryItem[]
             this.toastr.error('Deleted successfully', 'Inventory Detail Register')
           },
           error: err => { console.log(err) }

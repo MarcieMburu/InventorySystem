@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventoryAPI.Migrations
 {
     [DbContext(typeof(InventoryAPIContext))]
-    [Migration("20240801115221_intial")]
+    [Migration("20240801132037_intial")]
     partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace InventoryAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("InventoryAPI.Models.InventoryDetail", b =>
+            modelBuilder.Entity("InventoryAPI.Models.InventoryItem", b =>
                 {
                     b.Property<int>("ItemID")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace InventoryAPI.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<string>("ItemName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -49,7 +49,7 @@ namespace InventoryAPI.Migrations
 
                     b.HasKey("ItemID");
 
-                    b.ToTable("InventoryDetails");
+                    b.ToTable("InventoryItems");
                 });
 #pragma warning restore 612, 618
         }

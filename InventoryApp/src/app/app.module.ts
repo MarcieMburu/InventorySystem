@@ -6,22 +6,22 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 import { AppComponent } from './app.component';
-import { InventoryDetailsComponent } from './inventory-details/inventory-details.component';
-import { InventoryDetailFormComponent } from './inventory-details/inventory-detail-form/inventory-detail-form.component';
+import { InventoryItemComponent } from './inventory-details/inventory-details.component';
+import { InventoryItemFormComponent } from './inventory-details/inventory-detail-form/inventory-detail-form.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InventoryDetailsComponent,
-    InventoryDetailFormComponent,
+    InventoryItemComponent,
+    InventoryItemFormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

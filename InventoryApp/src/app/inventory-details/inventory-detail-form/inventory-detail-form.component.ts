@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { InventoryDetailService } from 'src/app/shared/inventory-detail.service';
+import { InventoryItemService } from 'src/app/shared/inventory-detail.service';
 import { NgForm } from "@angular/forms";
-import { InventoryDetail } from 'src/app/shared/inventory-detail.model';
+import { InventoryItem } from 'src/app/shared/inventory-detail.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -10,9 +10,9 @@ import { ToastrService } from 'ngx-toastr';
   styles: [
   ]
 })
-export class InventoryDetailFormComponent {
+export class InventoryItemFormComponent {
 
-  constructor(public service: InventoryDetailService, private toastr: ToastrService) {
+  constructor(public service: InventoryItemService, private toastr: ToastrService) {
   }
 
   onSubmit(form: NgForm) {
@@ -30,7 +30,7 @@ export class InventoryDetailFormComponent {
     this.service.postInventoryDetail()
       .subscribe({
         next: res => {
-          this.service.list = res as InventoryDetail[]
+          this.service.list = res as InventoryItem[]
           this.service.resetForm(form)
           this.toastr.success('Inserted successfully', 'Inventory Detail Register')
         },
@@ -41,7 +41,7 @@ export class InventoryDetailFormComponent {
     this.service.putInventoryDetail()
       .subscribe({
         next: res => {
-          this.service.list = res as InventoryDetail[]
+          this.service.list = res as InventoryItem[]
           this.service.resetForm(form)
           this.toastr.info('Updated successfully', 'Inventory Detail Register')
         },

@@ -10,6 +10,9 @@ using InventoryAPI.Models;
 
 namespace InventoryAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class InventoryDetailsController : ControllerBase
     {
         private readonly InventoryAPIContext _context;

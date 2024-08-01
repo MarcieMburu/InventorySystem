@@ -5,6 +5,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<InventoryAPIContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("InventoryAPIContext") ?? throw new InvalidOperationException("Connection string 'InventoryAPIContext' not found.")));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins",
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:4200") // Angular app URL
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -13,6 +24,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigins"); // Use CORS policy
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

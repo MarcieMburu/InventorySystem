@@ -1,0 +1,12 @@
+src
+├── app
+│   ├── inventory-details
+│   │   ├── inventory-details.component.ts|.html
+│   │   └── inventory-detail-form
+│   │       └── inventory-detail-form.component.ts|.html
+│   ├── shared
+│   │   ├── inventory-detail.service.ts
+│   │   └── inventory-detail.model.ts
+│   └── app.module.ts
+├── styles.css (global css rules)
+└── index.html (cdn path for bootstrap & fa icons)

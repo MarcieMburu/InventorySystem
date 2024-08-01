@@ -13,11 +13,11 @@ namespace InventoryAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class InventoryItemsController : ControllerBase
+    public class ItemsController : ControllerBase
     {
         private readonly InventoryAPIContext _context;
 
-        public InventoryItemsController(InventoryAPIContext context)
+        public ItemsController(InventoryAPIContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace InventoryAPI.Controllers
 
         // GET: api/items
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<InventoryItem >>> GetInventoryItems()
+        public async Task<ActionResult<IEnumerable<InventoryItem >>> GetItems()
         {
             if (_context.InventoryItems == null)
             {
@@ -36,7 +36,7 @@ namespace InventoryAPI.Controllers
 
         // GET: api/items/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<InventoryItem >> GetInventoryItem(int id)
+        public async Task<ActionResult<InventoryItem >> GetItem(int id)
         {
             if (_context.InventoryItems == null)
             {
@@ -55,7 +55,7 @@ namespace InventoryAPI.Controllers
 
         // POST: api/items
         [HttpPost]
-        public async Task<ActionResult<InventoryItem >> PostInventoryItem(InventoryItem  inventoryItem)
+        public async Task<ActionResult<InventoryItem >> PostItem(InventoryItem  inventoryItem)
         {
             if (_context.InventoryItems == null)
             {
@@ -69,7 +69,7 @@ namespace InventoryAPI.Controllers
 
         // PUT: api/items/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInventoryItem(int id, InventoryItem  inventoryItem)
+        public async Task<IActionResult> PutItem(int id, InventoryItem  inventoryItem)
         {
             if (id != inventoryItem.ItemID)
             {
@@ -84,7 +84,7 @@ namespace InventoryAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!InventoryItemExists(id))
+                if (!ItemExists(id))
                 {
                     return NotFound();
                 }
@@ -99,7 +99,7 @@ namespace InventoryAPI.Controllers
 
         // DELETE: api/items/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteInventoryItem(int id)
+        public async Task<IActionResult> DeleteItem(int id)
         {
             if (_context.InventoryItems == null)
             {
@@ -117,7 +117,7 @@ namespace InventoryAPI.Controllers
             return Ok(await _context.InventoryItems.ToListAsync());
         }
 
-        private bool InventoryItemExists(int id)
+        private bool ItemExists(int id)
         {
             return (_context.InventoryItems?.Any(e => e.ItemID == id)).GetValueOrDefault();
         }
